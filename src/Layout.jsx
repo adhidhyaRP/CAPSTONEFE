@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, Navigate, Outlet } from 'react-router-dom'
+import { Link, Navigate, Outlet, useNavigate } from 'react-router-dom'
 
 const Layout = () => {
+ const navigate = useNavigate()
+
   return (
 
 <div>
@@ -33,7 +35,10 @@ const Layout = () => {
      
       <button class="btn btn-outline-success" style={{float:'right',width:'130px',height:'40px',borderRadius:'10px'}}
     onClick={()=>{localStorage.removeItem("authorised")
-      window.location.reload()}
+      navigate('/login')
+      window.location.reload()
+    
+    }
     }
     >LOGOUT</button>
     </div>
