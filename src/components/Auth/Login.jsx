@@ -1,13 +1,17 @@
 
+
+
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import './auth.css'; 
 import Axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const formik = useFormik({
     initialValues: {
@@ -19,14 +23,10 @@ const Login = () => {
       password: Yup.string().required('Password is required'),
     }),
     onSubmit: (values) => {
-     
       Axios.post(`${import.meta.env.VITE_BACKENDURL}/auth/login`, values)
         .then((response) => {
           if (response.data.status) {
-            
-            localStorage.setItem('userId', response.data.userId);
-            localStorage.setItem('authorised', true);
-            console.log('navigate')
+            login(response.data.userId);
             navigate('/');
           }
           console.log(response.data);
