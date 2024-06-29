@@ -36,7 +36,7 @@ const Layout = () => {
       <button class="btn btn-outline-success" style={{float:'right',width:'130px',height:'40px',borderRadius:'10px'}}
     onClick={()=>{localStorage.removeItem("authorised")
       navigate('/login')
-      window.location.reload()
+     
     
     }
     }
