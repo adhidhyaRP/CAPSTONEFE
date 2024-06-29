@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+}
+
+.frontimage img {
+  width: 100%;
+  height: auto;
+}
+
+.aboutus h1 {
+  font-size: 70px;
+  margin: 50px;
+  color: rgb(15, 21, 127);
+}
+
+.aboutus p {
+  font-size: 25px;
+  margin: 20px;
+  color: rgb(79, 78, 78);
+}
+
+.downloadicon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyfeatures h1 {
+  font-size: 50px;
+}
+
+.pageend {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
+
+/* Media Queries */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .aboutus h1 {
+    font-size: 50px;
+  }
+
+  .aboutus p {
+    font-size: 20px;
+  }
+
+  .frontimage img {
+    height: auto;
+  }
+
+  .keyfeatures h1 {
+    font-size: 40px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+  .aboutus h1 {
+    font-size: 40px;
+  }
+
+  .aboutus p {
+    font-size: 18px;
+  }
+
+  .frontimage img {
+    height: auto;
+  }
+
+  .keyfeatures h1 {
+    font-size: 30px;
+  }
+
+  .pageend .d-flex {
+    flex-direction: column;
+  }
+}
